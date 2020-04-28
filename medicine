@@ -77,19 +77,6 @@ public class CUREHERE extends JFrame {
 
 package cureHere;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.Color;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
 public class HomeUI extends JFrame {
 
 	private JPanel contentPane;
@@ -125,3 +112,15 @@ public class HomeUI extends JFrame {
 		});
 		btnSearchDoctor.setBounds(12, 101, 204, 25);
 		contentPane.add(btnSearchDoctor);
+		
+		JButton btnSearchHospital = new JButton("Search Hospital");
+		btnSearchHospital.setBounds(118, 158, 179, 25);
+		contentPane.add(btnSearchHospital);
+		
+		JButton btnNeedForBlood = new JButton("Need For Blood");
+		btnNeedForBlood.setBounds(221, 215, 179, 25);
+		contentPane.add(btnNeedForBlood);
+		setVisible(true);
+	}
+}
+
