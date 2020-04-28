@@ -88,39 +88,80 @@ public class HomeUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public HomeUI() {
+	
+}
+
+package cureHere;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Medicine extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	
+
+	/**
+	 * Create the frame.
+	 */
+	public Medicine() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.CYAN);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblCureHere = new JLabel("CURE HERE");
-		lblCureHere.setBackground(Color.ORANGE);
-		lblCureHere.setForeground(Color.BLACK);
-		lblCureHere.setFont(new Font("Times New Roman", Font.PLAIN, 25));
-		lblCureHere.setBounds(103, 33, 194, 29);
-		contentPane.add(lblCureHere);
+		JLabel lblEnterDoctorName = new JLabel("Enter Doctor name");
+		lblEnterDoctorName.setBounds(58, 55, 143, 16);
+		contentPane.add(lblEnterDoctorName);
 		
-		JButton btnSearchDoctor = new JButton("Search Doctor");
-		btnSearchDoctor.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new Medicine();
+		textField = new JTextField();
+		textField.setBounds(182, 84, 217, 22);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel label = new JLabel("");
+		label.setFont(new Font("Times New Roman", Font.PLAIN, 23));
+		label.setBounds(32, 172, 367, 41);
+		contentPane.add(label);
+		JButton btnSearch = new JButton("Search");
+		btnSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String s1=textField.getText();
+				if(s1.equals("Dr.Maneeth"))
+				{
+					label.setText("Doctor Found");
+					
+				}
+				else
+				{
+					label.setText("Doctor Not Found");
+					
+				}
+					
 			}
 		});
-		btnSearchDoctor.setBounds(12, 101, 204, 25);
-		contentPane.add(btnSearchDoctor);
-		
-		JButton btnSearchHospital = new JButton("Search Hospital");
-		btnSearchHospital.setBounds(118, 158, 179, 25);
-		contentPane.add(btnSearchHospital);
-		
-		JButton btnNeedForBlood = new JButton("Need For Blood");
-		btnNeedForBlood.setBounds(221, 215, 179, 25);
-		contentPane.add(btnNeedForBlood);
-		setVisible(true);
+		btnSearch.setBounds(163, 134, 97, 25);
+		contentPane.add(btnSearch);
+		this.setVisible(true);
+	
 	}
 }
+
 
