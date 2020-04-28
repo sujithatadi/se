@@ -81,13 +81,40 @@ public class HomeUI extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-
-	/**
-	 * Create the frame.
-	 */
+	 	public HomeUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.CYAN);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblCureHere = new JLabel("CURE HERE");
+		lblCureHere.setBackground(Color.ORANGE);
+		lblCureHere.setForeground(Color.BLACK);
+		lblCureHere.setFont(new Font("Times New Roman", Font.PLAIN, 25));
+		lblCureHere.setBounds(103, 33, 194, 29);
+		contentPane.add(lblCureHere);
+		
+		JButton btnSearchDoctor = new JButton("Search Doctor");
+		btnSearchDoctor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new Medicine();
+			}
+		});
+		btnSearchDoctor.setBounds(12, 101, 204, 25);
+		contentPane.add(btnSearchDoctor);
+		
+		JButton btnSearchHospital = new JButton("Search Hospital");
+		btnSearchHospital.setBounds(118, 158, 179, 25);
+		contentPane.add(btnSearchHospital);
+		
+		JButton btnNeedForBlood = new JButton("Need For Blood");
+		btnNeedForBlood.setBounds(221, 215, 179, 25);
+		contentPane.add(btnNeedForBlood);
+		setVisible(true);
+	}
 	
 }
 
